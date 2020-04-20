@@ -1,0 +1,129 @@
+{
+  "characters" : [
+    {
+      "id" : "1",
+      "name" : "Baby Mario",
+      "url" : "./images/babyMario.png"
+    },
+    {
+      "id" : "2",
+      "name" : "Baby Peach",
+      "url" : "./images/babyPeach.png"
+    },
+    {
+      "id" : "3",
+      "name" : "Toad",
+      "url" : "./images/toad.png"
+    },
+    {
+      "id" : "4",
+      "name" : "Koopa Troopa",
+      "url" : "./images/koopaTrooper.png"
+    },
+    {
+      "id" : "5",
+      "name" : "Mario",
+      "url" : "./images/mario.png"
+    },
+    {
+      "id" : "6",
+      "name" : "Luigi",
+      "url" : "./images/luigi.png"
+    },
+    {
+      "id" : "7",
+      "name" : "Peach",
+      "url" : "./images/peach.png"
+    },
+    {
+      "id" : "8",
+      "name" : "Yoshi",
+      "url" : "./images/yoshi.png"
+    },
+    {
+      "id" : "9",
+      "name" : "Wario",
+      "url" : "./images/wario.png"
+    },
+    {
+      "id" : "10",
+      "name" : "Waluigi",
+      "url" : "./images/waluigi.png"
+    },
+    {
+      "id" : "11",
+      "name" : "Donkey Kong",
+      "url" : "./images/donkeyKong.png"
+    },
+    {
+      "id" : "12",
+      "name" : "Bowser",
+      "url" : "./images/bowser.png"
+    },
+    {
+      "id" : "13",
+      "name" : "Baby Daisy",
+      "url" : "./images/babyDaisy.png"
+    },
+    {
+      "id" : "14",
+      "name" : "Baby Luigi",
+      "url" : "./images/babyLuigi.png"
+    },
+    {
+      "id" : "15",
+      "name" : "Birdo",
+      "url" : "./images/birdo.png"
+    },
+    {
+      "id" : "16",
+      "name" : "Bowser Junior",
+      "url" : "./images/bowserJunior.png"
+    },
+    {
+      "id" : "17",
+      "name" : "Daisy",
+      "url" : "./images/daisy.png"
+    },
+    {
+      "id" : "18",
+      "name" : "Diddy Kong",
+      "url" : "./images/diddyKong.png"
+    },
+    {
+      "id" : "19",
+      "name" : "Dry Bones",
+      "url" : "./images/dryBones.png"
+    },
+    {
+      "id" : "20",
+      "name" : "Dry Bowser",
+      "url" : "./images/dryBowser.png"
+    },
+    {
+      "id" : "21",
+      "name" : "Funky King",
+      "url" : "./images/funkyKing.png"
+    },
+    {
+      "id" : "22",
+      "name" : "King Boo",
+      "url" : "./images/kingBoo.png"
+    },
+    {
+      "id" : "23",
+      "name" : "Mii",
+      "url" : "./images/mii.png"
+    },
+    {
+      "id" : "24",
+      "name" : "Rosalina",
+      "url" : "./images/rosalina.png"
+    },
+    {
+      "id" : "25",
+      "name" : "Toadette",
+      "url" : "./images/toadette.png"
+    }
+  ]
+}
