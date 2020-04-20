@@ -1,0 +1,164 @@
+{
+  "tracks":
+  [
+    {"id": 1,
+      "name": "Luigi Circuit",
+      "cup": "Mushroom Cup",
+      "img": "./images/Luigi_Circuit.png"},
+
+    {"id": 2,
+    "name": "Moo Moo Meadows",
+    "cup": "Mushroom Cup",
+    "img": "./images/Moo_Moo_Meadows.png"},
+
+    {"id": 3,
+    "name": "Mushroom Gorge",
+    "cup": "Mushroom Cup",
+    "img": "./images/Mushroom_Gorge.png"},
+
+    {"id": 4,
+    "name": "Toads's Factory",
+    "cup": "Mushroom Cup",
+    "img": "./images/Toads_Factory.png"},
+
+    {"id": 5,
+    "name": "Mario Circuit",
+    "cup": "Flower Cup",
+    "img": "./images/Mario_Circuit.png"},
+
+    {"id": 6,
+    "name": "Coconut Mall",
+    "cup": "Flower Cup",
+    "img": "./images/Coconut_Mall.png"},
+
+    {"id": 7,
+    "name": "DK Summit",
+    "cup": "Flower Cup",
+    "img": "./images/DK_Summit.png"},
+
+    {"id": 8,
+    "name": "Wario's Gold Mine",
+    "cup": "Flower Cup",
+    "img": "./images/Warios_Gold_Mine.png"},
+
+    {"id": 9,
+    "name": "Daisy Circuit",
+    "cup": "Star Cup",
+    "img": "./images/Daisy_Circuit.png"},
+
+    {"id": 10,
+    "name": "Koopa Cape",
+    "cup": "Star Cup",
+    "img": "./images/Koopa_Cape.png"},
+
+    {"id": 11,
+    "name": "Maple Treeway",
+    "cup": "Star Cup",
+    "img": "./images/Maple_Treeway.png"},
+
+    {"id": 12,
+    "name": "Grumble Volcano",
+    "cup": "Star Cup",
+    "img": "./images/Grumble_Volcano.png"},
+
+    {"id": 13,
+    "name": "Dry Dry Ruins",
+    "cup": "Special Cup",
+    "img": "./images/Dry_Dry_Ruins.png"},
+
+    {"id": 14,
+    "name": "Moonview Highway",
+    "cup": "Special Cup",
+    "img": "./images/Moonview_Highway.png"},
+
+    {"id": 15,
+    "name": "Bowser's Castle",
+    "cup": "Special Cup",
+    "img": "./images/Bowsers_Castle.png"},
+
+    {"id": 16,
+    "name": "Rainbow Road",
+    "cup": "Special Cup",
+    "img": "./images/Rainbow_Road.png"},
+
+    {"id": 17,
+    "name": "Peach Beach",
+    "cup": "Shell Cup",
+    "img": "./images/Peach_Beach.png"},
+
+    {"id": 18,
+    "name": "Yoshi Falls",
+    "cup": "Shell Cup",
+    "img": "./images/Yoshi_Falls.png"},
+
+    {"id": 19,
+    "name": "Ghost Valley 2",
+    "cup": "Shell Cup",
+    "img": "./images/Ghost_Valley_2.png"},
+
+    {"id": 20,
+    "name": "Mario Raceway",
+    "cup": "Shell Cup",
+    "img": "./images/Mario_Raceway.png"},
+
+    {"id": 21,
+    "name": "Sherbert Land",
+    "cup": "Banana Cup",
+    "img": "./images/Sherbert_Land.png"},
+
+    {"id": 22,
+    "name": "Shy Guy Beach",
+    "cup": "Banana Cup",
+    "img": "./images/Shy_Guy_Beach.png"},
+
+    {"id": 23,
+    "name": "Delfino Square",
+    "cup": "Banana Cup",
+    "img": "./images/Delfino_Beach.png"},
+
+    {"id": 24,
+    "name": "Waluigi Stadium",
+    "cup": "Banana Cup",
+    "img": "./images/Waluigi_Stadium.png"},
+
+    {"id": 25,
+    "name": "Desert Hills",
+    "cup": "Leaf Cup",
+    "img": "./images/Desert_Hills.png"},
+
+    {"id": 26,
+    "name": "Bowser Castle 3",
+    "cup": "Leaf Cup",
+    "img": "./images/Bowser_Castle_3.png"},
+
+    {"id": 27,
+    "name": "DK's Jungle Parkway",
+    "cup": "Leaf Cup",
+    "img": "./images/DKs_Jungle_Parkway.png"},
+
+    {"id": 28,
+    "name": "Mario Circuit GCN",
+    "cup": "Leaf Cup",
+    "img": "./images/Mario_Circuit_GCN.png"},
+
+    {"id": 29,
+    "name": "Mario Circuit 3",
+    "cup": "Lightning Cup",
+    "img": "./images/Mario_Circuit_3.png"},
+
+    {"id": 30,
+    "name": "Peach Gardens",
+    "cup": "Lightning Cup",
+    "img": "./images/Peach_Gardens.png"},
+
+    {"id": 31,
+    "name": "DK Mountain",
+    "cup": "Lightning Cup",
+    "img": "./images/DK_Mountain.png"},
+
+    {"id": 32,
+    "name": "Bowser's Castle",
+    "cup": "Lightning Cup",
+    "img": "./images/Bowsers_Castle.png"}
+  ]
+}
