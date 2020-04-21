@@ -19,7 +19,8 @@ export default class TracksContainer extends Component {
                     <TrackCard key={trackCard.id} trackCardContent={trackCard} />
                 });
 
-                render() {
+                render()
+                {
                     return (
                         <div>
                         { trackCardComponents }
