@@ -1,3 +1,5 @@
+const CharacterService = require('../Services/CharacterService');
+const CohortService = require('../Services/CohortService');
 
 /** Gets all records from the users collection and calls a callback with the array of objects returned.
  *

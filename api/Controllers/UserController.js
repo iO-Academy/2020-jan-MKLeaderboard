@@ -1,8 +1,5 @@
 const DbService = require('../Services/DbService');
 const UserService = require('../Services/UserService');
-const CharacterService = require('../Services/CharacterService');
-const CohortService = require('../Services/CohortService');
-
 
 /** Gets all Users from the Db and hydrates Character / Cohort ids into information to form
  * a comprehensive data object for each user.
