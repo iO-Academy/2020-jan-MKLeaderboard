@@ -16,9 +16,9 @@ export default class TracksContainer extends Component {
 
                 this.setState({ trackCards: responseData.data });
 
-                this.setState({trackCardComponents: this.trackCards.map((trackCard) => {
+                this.setState({trackCardComponents: this.trackCards.map((trackCard) => 
                         <TrackCard key={trackCard.id} trackCardContent={trackCard} />
-                    })
+                    )
                 })
 
             })
