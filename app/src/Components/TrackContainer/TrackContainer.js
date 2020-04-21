@@ -13,14 +13,12 @@ export default class TracksContainer extends Component {
         fetch('http://localhost:4000/tracks')
             .then(res => res.json())
             .then((responseData) => {
+                let tracks = responseData.data;
 
-                this.setState({ trackCards: responseData.data });
+                //this.setState({ trackCards: responseData.data });
 
-                this.setState({trackCardComponents: this.state.trackCards.map((trackCard) => {
-                        return <TrackCard key={trackCard.id} trackCardContent={trackCard} />
-                    })
-                })
-
+                const trackComponents = tracks.map((trackCard) => <TrackCard key={trackCard.id} trackCardContent={trackCard} />)
+                this.setState({trackCardComponents:  trackComponents})
             })
             .catch(console.log);
     }
