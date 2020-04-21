@@ -1,5 +1,5 @@
-{"_id":{"$oid":"5e9db4488acb8b03654b156b"},"name":"Matt","favChar":"4","cohort":"5e9db4e68acb8b03654b156c"}
-{"_id":{"$oid":"5e9db49ef522ca03659b7400"},"name":"Mark","favChar":"14","cohort":"5e9db4e68acb8b03654b156c"}
-{"_id":{"$oid":"5e9db4b7f522ca03659b7401"},"name":"Andrew","favChar":"19","cohort":"5e9db4e68acb8b03654b156c"}
-{"_id":{"$oid":"5e9db4c8f522ca03659b7402"},"name":"Alex","favChar":"14","cohort":"5e9db4e68acb8b03654b156c"}
-{"_id":{"$oid":"5e9dbdf9f522ca03659b7404"},"name":"James","favChar":"2","cohort":"5e9db511f522ca03659b7403"}
+{"_id":{"$oid":"5e9db4488acb8b03654b156b"},"name":"Matt","favChar":{"$numberInt":"4"},"cohort":"5e9db4e68acb8b03654b156c"}
+{"_id":{"$oid":"5e9db49ef522ca03659b7400"},"name":"Mark","favChar":{"$numberInt":"14"},"cohort":"5e9db4e68acb8b03654b156c"}
+{"_id":{"$oid":"5e9db4b7f522ca03659b7401"},"name":"Andrew","favChar":{"$numberInt":"19"},"cohort":"5e9db4e68acb8b03654b156c"}
+{"_id":{"$oid":"5e9db4c8f522ca03659b7402"},"name":"Alex","favChar":{"$numberInt":"14"},"cohort":"5e9db4e68acb8b03654b156c"}
+{"_id":{"$oid":"5e9dbdf9f522ca03659b7404"},"name":"James","favChar":{"$numberInt":"2"},"cohort":"5e9db511f522ca03659b7403"}
