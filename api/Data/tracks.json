@@ -157,8 +157,8 @@
     "img": "./images/DK_Mountain.png"},
 
     {"id": 32,
-    "name": "Bowser's Castle",
+    "name": "Bowser's Castle N64",
     "cup": "Lightning Cup",
-    "img": "./images/Bowsers_Castle.png"}
+    "img": "./images/Bowsers_Castle_N64.png"}
   ]
 }
