@@ -31,7 +31,7 @@ function hydrateUsers(db, users, callback) {
                 user.favChar = allCharacters.find(character => character.id === favCharId.toString());
 
                 let cohortId = user.cohort;
-                user.cohort = allCohorts.find(cohort => cohort._id === cohortId.toString());
+                user.cohort = allCohorts.find(cohort => cohort._id == cohortId);
                 return user;
             });
             callback(hydratedUsers);
