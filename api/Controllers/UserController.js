@@ -19,21 +19,26 @@ function getAllUsers(req, res) {
     {
         DbService.getDbConn((db) => {
             UserService.getAllUsers(db, (allUsers) => {
-                serverResponse.data = UserService.hydrateUsers(allUsers)
-                if (count(serverResponse.data) === 0) throw "User hydration failed";
-                serverResponse.status = 200;
-                serverResponse.message = 'Success';
+                UserService.hydrateUsers(db, allUsers, (hydratedUsers) => {
+                    serverResponse.data = hydratedUsers;
+                    if (serverResponse.data.length === 0) throw "User hydration failed";
+                    serverResponse.status = 200;
+                    serverResponse.message = 'Success';
+                    res
+                        .status(serverResponse.status)
+                        .json(serverResponse);
+                })
             })
         })
     }
     catch(error)
     {
         serverResponse.message = error.message;
+        res
+            .status(serverResponse.status)
+            .json(serverResponse);
     }
 
-    res
-        .status(serverResponse.status)
-        .json(serverResponse);
 }
 
 module.exports.getAllUsers = getAllUsers;
