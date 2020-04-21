@@ -1,7 +1,7 @@
 import React from "react";
 
-const TrackCard = () => {
-    return <h1>{ this.props.trackCard.name }</h1>
+const TrackCard = ({ trackCardContent }) => {
+    return <h1>{ trackCardContent.name }</h1>
 }
 
 export default TrackCard
