@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Mario;
+    src: url('../../fonts/marioFont.ttf');
+}
+
+.header {
+    font-family: Mario, sans-serif;
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-align: center;
+    word-spacing: -10px;
+    letter-spacing: 1px
+}
