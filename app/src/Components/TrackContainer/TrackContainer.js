@@ -10,7 +10,7 @@ export default class TracksContainer extends Component {
 
     componentDidMount() {
 
-        fetch('localhost:4000/tracks')
+        fetch('http://localhost:4000/tracks')
             .then(res => res.json())
             .then((responseData) => {
 
