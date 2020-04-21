@@ -12,7 +12,6 @@ class Navbar extends Component {
                     <li><Link to='/tracks' className='nav-link'>Tracks</Link></li>
                 </ul>
             </nav>
-
         );
     }
 }
