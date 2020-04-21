@@ -4,7 +4,8 @@ import TrackCard from '../../Components/TrackCard/TrackCard';
 export default class TracksContainer extends Component {
 
     state = {
-        trackCards: []
+        trackCards: [],
+        trackCardComponents: []
     };
 
     componentDidMount() {
@@ -15,20 +16,21 @@ export default class TracksContainer extends Component {
 
                 this.setState({ trackCards: responseData.data });
 
-                let trackCardComponents = this.trackCards.map((trackCard) => {
-                    <TrackCard key={trackCard.id} trackCardContent={trackCard} />
-                });
-
-                render()
-                {
-                    return (
-                        <div>
-                        { trackCardComponents }
-                        </div>
-                    )
-                }
+                this.setState({trackCardComponents: this.trackCards.map((trackCard) => {
+                        <TrackCard key={trackCard.id} trackCardContent={trackCard} />
+                    })
+                })
 
             })
             .catch(console.log);
+    }
+
+    render()
+    {
+        return (
+            <div>
+            { this.state.trackCardComponents }
+            </div>
+        )
     }
 }
