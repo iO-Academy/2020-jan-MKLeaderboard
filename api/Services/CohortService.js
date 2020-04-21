@@ -7,7 +7,6 @@
 function getAllCohorts(db, callback) {
     let collection = db.collection('cohorts');
     collection.find({}).toArray((err, docs) => {
-        console.log(docs)
         callback(docs);
     })
 }

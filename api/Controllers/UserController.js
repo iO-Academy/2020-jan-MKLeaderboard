@@ -21,7 +21,6 @@ function getAllUsers(req, res) {
             UserService.getAllUsers(db, (allUsers) => {
                 UserService.hydrateUsers(db, allUsers, (hydratedUsers) => {
                     serverResponse.data = hydratedUsers;
-                    if (serverResponse.data.length === 0) throw "User hydration failed";
                     serverResponse.status = 200;
                     serverResponse.message = 'Success';
                     res
