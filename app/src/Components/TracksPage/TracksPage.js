@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MainContent from "../MainContent/MainContent";
+import TrackContainer from "../TrackContainer/TrackContainer";
 
 import './TracksPage.css'
 
@@ -8,7 +9,7 @@ class TracksPage extends Component {
         return (
             <div className='tracksContent'>
                 <h1>Tracks</h1>
-                <MainContent/>
+                <MainContent displayContent={<TrackContainer />}/>
             </div>
         );
     }
