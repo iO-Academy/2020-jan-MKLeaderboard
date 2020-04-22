@@ -1,0 +1,14 @@
+.utilityBar {
+    padding: 5px;
+    background-image: linear-gradient(#0D1D6A, #204DD4);
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+}
+
+.utilityButton {
+    padding: 3px 10px;
+    display: inline-block;
+    font-family: MarioWii, sans-serif;
+    color: #ffffff;
+    background-color: #a5cbf0;
+}
