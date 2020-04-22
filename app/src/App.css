@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: MarioWii;
+  src: url('fonts/MarioKartWii.ttf');
+}
+
+h1 {
+  font-family: MarioWii, sans-serif;
+}
+
+body {
+  background-image: linear-gradient(#2867de, #0e2a7a);
+  height: 100vh;
+}
+
+.bgImage {
+  position: fixed;
+  bottom: 0;
+  right: -150px;
+  display: block;
+  height: 400px;
+  z-index: -1;
+}
+
+.contentContainer {
+  width: 740px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
