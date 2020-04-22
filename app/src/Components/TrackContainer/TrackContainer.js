@@ -14,7 +14,6 @@ export default class TrackContainer extends Component {
             .then(res => res.json())
             .then((responseData) => {
                 let tracks = responseData.data;
-                let cups = ['Mushroom Cup', 'Flower Cup', 'Star Cup', 'Special Cup', 'Shell Cup', 'Banana Cup', 'Leaf Cup', 'Lightning Cup']
 
                 const trackComponents = tracks.map((trackCard) => <TrackCard key={trackCard.id} trackCardContent={trackCard}/>)
                 this.setState({trackCardComponents: trackComponents})
