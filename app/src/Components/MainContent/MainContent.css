@@ -1,4 +1,4 @@
 .content {
-    height: 400px;
     border: 2px dotted #ffffff;
+    background-color: rgba(184,220,244,0.9);
 }

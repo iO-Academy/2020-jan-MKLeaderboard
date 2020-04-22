@@ -1,3 +1,5 @@
+
+//EXAMPLE CARD ONLY - TO BE REPLACED IN MERGE CONFLICT
 import React from "react";
 
 const TrackCard = ({ trackCardContent }) => {

@@ -6,7 +6,7 @@ class MainContent extends Component {
     render() {
         return (
                 <div className='content'>
-
+                    { this.props.displayContent }
                 </div>
         );
     }
