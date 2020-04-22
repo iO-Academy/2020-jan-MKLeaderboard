@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TrackCard from '../../Components/TrackCard/TrackCard';
+import TrackCard from '../TrackCard/TrackCard';
 
 export default class TracksContainer extends Component {
 
@@ -14,17 +14,19 @@ export default class TracksContainer extends Component {
             .then((responseData) => {
                 let tracks = responseData.data;
 
-                const trackComponents = tracks.map((trackCard) => <TrackCard key={trackCard.id} trackCardContent={trackCard} />)
+                const trackComponents = tracks.map((trackCard) => <TrackCard key={trackCard.id} trackCardContent={trackCard}/>)
                 this.setState({trackCardComponents: trackComponents})
             })
-            .catch(console.log);
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     render()
     {
         return (
             <div>
-            { this.state.trackCardComponents }
+                { this.state.trackCardComponents.length > 0 ? this.state.trackCardComponents : <p className="noRecordsFound">No Records Found!</p> }
             </div>
         )
     }

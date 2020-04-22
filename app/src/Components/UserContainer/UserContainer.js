@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import UserCard from '../../Components/UserCard/UserCard';
+import UserCard from '../UserCard/UserCard';
 
 export default class UserContainer extends Component {
 
     state = {
         userCardComponents: [],
-        displayContents: ''
     };
 
     componentDidMount() {
@@ -16,10 +15,10 @@ export default class UserContainer extends Component {
                 let users = responseData.data;
 
                 const userComponents = users.map((userCard) => <UserCard key={userCard._id} userCardContent={userCard} />)
-                this.setState({userCardComponents: userComponents})
+                this.setState({ userCardComponents: userComponents })
             })
-            .catch((e) => {
-                this.setState({displayContents: ''})
+            .catch((error) => {
+                console.log(error);
             })
     }
 
@@ -27,7 +26,7 @@ export default class UserContainer extends Component {
     {
         return (
             <div className="userContainer">
-            { this.state.userCardComponents }
+            { this.state.userCardComponents.length > 0 ? this.state.userCardComponents : <p className="noRecordsFound">No Records Found!</p> }
             </div>
     )
     }
