@@ -15,7 +15,7 @@ export default class UserContainer extends Component {
             .then((responseData) => {
                 let users = responseData.data;
 
-                const userComponents = users.map((userCard) => <UserCard key={userCard.id} userCardContent={userCard} />)
+                const userComponents = users.map((userCard) => <UserCard key={userCard._id} userCardContent={userCard} />)
                 this.setState({userCardComponents: userComponents})
             })
             .catch(console.log);
