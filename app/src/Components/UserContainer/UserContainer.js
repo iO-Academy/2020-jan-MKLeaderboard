@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TrackCard from '../../Components/UserCard/UserCard';
+import UserCard from '../../Components/UserCard/UserCard';
 
 export default class UserContainer extends Component {
 
