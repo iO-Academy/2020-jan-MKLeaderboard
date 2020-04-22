@@ -4,7 +4,6 @@ import UserCard from '../../Components/UserCard/UserCard';
 export default class UserContainer extends Component {
 
     state = {
-        userCards: [],
         userCardComponents: []
     };
 

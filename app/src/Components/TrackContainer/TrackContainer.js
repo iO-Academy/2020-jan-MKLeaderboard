@@ -4,7 +4,6 @@ import TrackCard from '../../Components/TrackCard/TrackCard';
 export default class TracksContainer extends Component {
 
     state = {
-        trackCards: [],
         trackCardComponents: []
     };
 
