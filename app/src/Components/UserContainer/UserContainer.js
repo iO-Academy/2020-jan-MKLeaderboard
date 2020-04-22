@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserCard from '../UserCard/UserCard';
+import './userContainer.css';
 
 export default class UserContainer extends Component {
 
