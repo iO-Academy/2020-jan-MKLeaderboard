@@ -2,7 +2,7 @@ const trackData = require('../Data/tracks.json');
 
 /**
  * Service function to access the trackData JSON file in TrackController.
- * @returns {*}
+ * @returns array
  */
 function getAllTracks() {
     return trackData.tracks;

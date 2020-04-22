@@ -1,9 +1,15 @@
+import React, {Component} from 'react';
+import './trackCard.css'
 
-//EXAMPLE CARD ONLY - TO BE REPLACED IN MERGE CONFLICT
-import React from "react";
-
-const TrackCard = ({ trackCardContent }) => {
-    return <h1>{ trackCardContent.name } <img src={ trackCardContent.img}/></h1>
+class TrackCard extends Component {
+    render() {
+        return (
+            <div className="trackCard">
+                <img className="trackCardImg" src={ this.props.trackCardContent.img } alt={ this.props.trackCardContent.img } />
+                <h3>{ this.props.trackCardContent.name }</h3>
+            </div>
+        );
+    }
 }
 
 export default TrackCard

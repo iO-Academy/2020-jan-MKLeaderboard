@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import MainContent from "../MainContent/MainContent";
 import RacerContainer from "../RacerContainer/RacerContainer";
-
 import './RacersPage.css';
 
 class RacersPage extends Component {

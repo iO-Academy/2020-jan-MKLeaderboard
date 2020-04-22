@@ -22,7 +22,9 @@ let getAllTracks = (req, res) => {
             data: tracks
         }
     }
-    res.json(serverResponse);
+    res
+        .status(serverResponse.status)
+        .json(serverResponse);
 };
 
 module.exports.getAllTracks = getAllTracks;
