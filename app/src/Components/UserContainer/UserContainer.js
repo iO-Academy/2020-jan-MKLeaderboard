@@ -4,7 +4,8 @@ import UserCard from '../../Components/UserCard/UserCard';
 export default class UserContainer extends Component {
 
     state = {
-        userCardComponents: []
+        userCardComponents: [],
+        displayContents: ''
     };
 
     componentDidMount() {
@@ -17,13 +18,15 @@ export default class UserContainer extends Component {
                 const userComponents = users.map((userCard) => <UserCard key={userCard._id} userCardContent={userCard} />)
                 this.setState({userCardComponents: userComponents})
             })
-            .catch(console.log);
+            .catch((e) => {
+                this.setState({displayContents: ''})
+            })
     }
 
     render()
     {
         return (
-            <div>
+            <div className="userContainer">
             { this.state.userCardComponents }
             </div>
     )
