@@ -1,10 +1,11 @@
 .trackCard {
-    background-image: linear-gradient(to bottom, #ffffff, #f4d264);
+    background-image: linear-gradient(#ffffff, #f4d264);
     border: 1px solid #444444;
     color: #000000;
     border-radius: 10px;
     font-family: Avenir, sans-serif;
     margin-top: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .trackCard h3 {

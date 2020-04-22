@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
 import './App.css';
-
 import Nav from './Components/Navbar/Navbar';
 import Header from './Components/Header/Header';
 import RacersPage from './Components/RacersPage/RacersPage';

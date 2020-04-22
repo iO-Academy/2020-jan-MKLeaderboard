@@ -4,7 +4,7 @@ const TrackController = require('../Controllers/TrackController');
 function routes(app) {
     app.get('/', (req, res) => res.send('Success'));
     app.get('/users', UserController.getAllUsers);
-    app.get('/tracks', TrackController.getAllTracks)
+    app.get('/tracks', TrackController.getAllTracks);
 }
 
 module.exports = routes;
