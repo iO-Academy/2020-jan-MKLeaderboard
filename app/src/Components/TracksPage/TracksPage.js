@@ -8,7 +8,9 @@ class TracksPage extends Component {
     render() {
         return (
             <div className='tracksContent'>
-                <h1>Tracks</h1>
+                <div className="pageHeaderBar">
+                    <h2>Tracks</h2>
+                </div>
                 <MainContent displayContent={<TrackContainer />}/>
             </div>
         );

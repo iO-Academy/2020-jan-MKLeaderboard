@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from '../Modal/Modal';
 import CreateRacerForm from '../CreateRacerForm/CreateRacerForm';
+import './utilityBar.css';
 
 class UtilityBar extends React.Component {
     state = { 

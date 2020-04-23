@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './createRacerForm.css';
-import "../DropDownInput/DropDownInput";
+// import "../DropDownInput/DropDownInput";
 
 export default class CreateRacerForm extends Component {
 
-    state = { };
+    state = { 
+        cohortsListData: []
+    };
 
     componentDidMount() {
         fetch('http://localhost:4000/cohorts')
@@ -12,8 +14,8 @@ export default class CreateRacerForm extends Component {
         .then((responseData) => {
             let cohorts = responseData.data;
 
-            const cohortsList = cohorts.map((cohort) => <option key={cohort.id} racerCardContent={racer} />)
-            this.setState({ cohortsListData: cohortsList });
+            // const cohortsList = cohorts.map((cohort) => cohortDropDownContent={cohort});
+            //this.setState({ cohortsListData: cohortsList });
         })
     }
 
@@ -21,14 +23,14 @@ export default class CreateRacerForm extends Component {
         return (
             <form className="createRacerForm">
                 
-                <img src={} />
+                {/* <img src={} /> */}
                 <input type="text" name="racerName" />
                 
                 <label>Select your character:</label>
-                <DropDownInput />
-
+                {/* <DropDownInput /> */}
+{/*  */}
                 <label>Select your cohort:</label>
-                <DropDownInput />
+                {/* <DropDownInput /> */}
 
                 <button type="submit" name="submitBtn" label="Submit" method="post" />
 

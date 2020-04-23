@@ -1,3 +1,14 @@
-.racersContent h1 {
+.pageHeaderBar h2 {
     font-size: 1.5rem;
+    color: #ffffff;
+    font-family: MarioWii, sans-serif;
+    border: 2px solid #fff;
+    background-image: linear-gradient(#2867de, #0e2a7a) ;
+    box-shadow: 0 1px 3px #222222;
+    padding: 0 24px;
+    border-radius: 15px;
+    margin: 30px 0 0 0;
+    /* position: relative; */
+    font-weight: normal;
+    /* top: 25px; */
 }

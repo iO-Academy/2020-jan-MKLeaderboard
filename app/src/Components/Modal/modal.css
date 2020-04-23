@@ -18,6 +18,19 @@
     padding: 20px;
 }
 
+.modalContent {
+    padding: 10px;
+}
+
+.modal h2 {
+    margin: 5px;
+    display: inline-block;
+}
+
+.btnCloseCircle {
+    float: right;
+}
+
 .display-block {
     display: block;
 }
