@@ -11,59 +11,60 @@ export default class CreateRacerForm extends Component {
         charImg: ''
     };
 
-    const setCharImg = (id) => {
-        let characterChoice = this.characterListData.find(character => character.id === id);
+    setCharImg = (id) => {
+        let characterChoice = this.state.characterListData.find(character => character.value === id);
         this.setState({ charImg: characterChoice.url });
     }
 
     componentDidMount() {
-        Promise.all([
-            fetch('http://localhost:4000/cohorts'),
-            fetch('http://localhost:4000/characters')
-        ])
-            .then((responses) => {
-                return responses.map((response) => {
-                    return response.json();
-                })
-            })
-            .then((responseData) => {
-                let cohorts = responseData[0].data;
-                let characters = responseData[1].data;
+            fetch('http://localhost:4000/cohorts').then(cohortData => cohortData.json())
+                .then(cohortData => {
 
-                const cohortsList = cohorts.map((cohort => {
-                    return {
-                        'value': cohort._id,
-                        'name': cohort.name
-                    }
-                }));
+                fetch('http://localhost:4000/characters').then(charData => charData.json())
+                    .then(charData => {
 
-                const charsList = characters.map((character => {
-                    return {
-                        'value': character.id,
-                        'name': character.name,
-                    }
-                }));
+                            let cohorts = cohortData.data;
+                            let characters = charData.data;
 
-                this.setState({ cohortsListData: cohortsList, characterListData: charsList });
+                            const cohortsList = cohorts.map((cohort => {
+                                return {
+                                    'value': cohort._id,
+                                    'name': cohort.name
+                                }
+                            }));
+
+                            const charsList = characters.map((character => {
+                                return {
+                                    'value': character.id,
+                                    'name': character.name,
+                                    'url': character.url
+                                }
+                            }));
+
+                            this.setState({ cohortsListData: cohortsList, characterListData: charsList });
+                    })
             })
     }
 
     render() {
         return (
-            <form className="createRacerForm">
-                
-                <img className="charImg" src={this.state.showCharImg} alt="Character" />
+            <form className="createRacerForm" onSubmit={ this.handleSubmit } >
 
-                <input type="text" className="racerName" />
-                
-                <label>Select your cohort:</label>
-                <DropDownInput options={this.state.cohortsListData} />
+                <div className="characterBox">
+                    { this.state.charImg ? <img className="charImg" src={ this.state.charImg } alt="Character" /> : '' }
+                </div>
 
-                <label>Select your favourite character:</label>
-                <DropDownInput options={this.state.characterListData} callback={this.setCharImg} />
+                <div className="formContent">
+                    <input type="text" className="racerName" />
 
-                <button type="submit" className="submitBtn" label="Submit" method="post" />
+                    <label>Cohort:</label>
+                    <DropDownInput options={ this.state.cohortsListData } />
 
+                    <label>Favourite character:</label>
+                    <DropDownInput options={ this.state.characterListData } callback={ this.setCharImg } />
+
+                    <input type="submit" className="submitBtn" label="Submit" />
+                </div>
             </form>
         )
     }
