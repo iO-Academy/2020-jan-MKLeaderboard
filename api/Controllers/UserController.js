@@ -65,6 +65,7 @@ function createUser(req, res) {
                     res.send('It bloody worked')
                 } else {
                     res.send('User was not inserted')
+                    res.status(400)
                 }
             } )
         })
@@ -73,7 +74,9 @@ function createUser(req, res) {
                 userValidation:nameValid.message,
                 favCharValidation:favCharValid.message
             }
+            res.status(400);
             return res.json(errorResponse);
+
         }
 
 }
