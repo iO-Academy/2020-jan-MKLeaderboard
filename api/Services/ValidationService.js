@@ -1,6 +1,13 @@
 const Validator = require('validator');
-// const Sanitize = require('validator').sanitize
+const CohortService = require('./CohortService');
+const DbService = require('../Services/DbService');
 
+
+/** Validates user from input and checks length is between 2 and 255
+ *
+ * @param data
+ * @returns {{success: boolean, message: string}}
+ */
 function validateUser(data) {
 
     if(!checkLength(data, 2, 255)) {
@@ -17,6 +24,11 @@ function validateUser(data) {
 
 }
 
+/** Validate favourite character to make sure it is on the list. Checks if value is between 1 and 25
+ *
+ * @param data
+ * @returns {{success: boolean, message: string}}
+ */
 function validateFavChar(data) {
     if(parseInt(data) < 1 || parseInt(data) > 25 ) {
         return {
@@ -31,6 +43,23 @@ function validateFavChar(data) {
     }
 }
 
+
+function validateCohort(data) {
+
+    DbService.getDbConn((db) => {
+        CohortService.getAllCohorts(db, (allCohorts) => {
+
+        })
+    })
+}
+
+/** Checks length of data using a min and max
+ *
+ * @param data
+ * @param min
+ * @param max
+ * @returns {boolean}
+ */
 function checkLength(data,min, max) {
     if(data.length > min && data.length < max) {
         return true
@@ -39,6 +68,11 @@ function checkLength(data,min, max) {
     }
 }
 
+/** Sanitizes data, trims data to remove whitespace and escapes special characters and replaces them to html entities
+ *
+ * @param data
+ * @returns sanitized Data
+ */
 function sanitizeData(data) {
     data = data.trim();
     data = Validator.escape(data);

@@ -42,7 +42,7 @@ function getAllUsers(req, res) {
 }
 
 /** Add new user into DB from form input on front end
- *
+ * User data is sanitized and validated before being added to database. Error message is return if validation fails
  * @param req
  * @param res
  */
