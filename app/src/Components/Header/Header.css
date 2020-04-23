@@ -5,9 +5,11 @@
 
 .header {
     font-family: Mario, sans-serif;
-    color: #ffffff;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     word-spacing: -10px;
-    letter-spacing: 1px
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0);
+    background-image: linear-gradient( #fff 30%, #ccc 58%, #999 64%, #ddd 90%);
+    -webkit-background-clip: text;
 }
