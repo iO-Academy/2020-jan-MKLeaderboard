@@ -47,6 +47,13 @@ function getAllUsers(req, res) {
  * @param res
  */
 function createUser(req, res) {
+
+    let serverResponse = {
+        status: 500,
+        message: 'Request failed',
+        data: []
+    }
+
     const user = {
         name: ValidationService.sanitizeData(req.body.name),
         favChar: ValidationService.sanitizeData(req.body.favChar),
@@ -57,27 +64,32 @@ function createUser(req, res) {
     const favCharValid = ValidationService.validateFavChar(user.favChar)
 
 
-    if (nameValid.success == true && favCharValid.success == true) {
+    if (nameValid.success && favCharValid.success) {
 
         DbService.getDbConn( (db) => {
             UserService.createUser(db, user, (docs) => {
                 if(docs.insertedCount === 1) {
-                    res.send('It bloody worked')
-                } else {
-                    res.send('User was not inserted')
-                    res.status(400)
-                }
-            } )
-        })
-    } else {
-            let errorResponse = {
-                userValidation:nameValid.message,
-                favCharValidation:favCharValid.message
-            }
-            res.status(400);
-            return res.json(errorResponse);
+                    serverResponse.status  = 200;
+                    serverResponse.message  = 'It bloody worked';
+                    res
+                        .status(serverResponse.status)
+                        .json(serverResponse);
 
-        }
+                } else {
+                    serverResponse.message  = 'User was not inserted into DB';
+                    res
+                        .status(serverResponse.status)
+                        .json(serverResponse);
+
+                }
+            });
+        });
+    } else {
+        serverResponse.message = nameValid.message + ' ' + favCharValid.message;
+        res
+            .status(serverResponse.status)
+            .json(serverResponse);
+    }
 
 }
 

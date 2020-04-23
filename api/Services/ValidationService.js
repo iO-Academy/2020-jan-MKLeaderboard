@@ -30,7 +30,7 @@ function validateUser(data) {
  * @returns {{success: boolean, message: string}}
  */
 function validateFavChar(data) {
-    if(parseInt(data) < 1 || parseInt(data) > 25 ) {
+    if(data.length < 1 || parseInt(data) < 1 || parseInt(data) > 25 ) {
         return {
             success: false,
             message:'Character must be between 1 & 25'
