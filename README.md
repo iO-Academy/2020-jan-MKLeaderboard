@@ -48,7 +48,20 @@ Response:
     ]
 }
 ```
+/users
 
+    POST - Adds user to database
+
+Request parameters: `name`,`favChar`, `cohort`
+
+Response:
+```
+{   
+    "status": 200,
+    "message": "It bloody worked"
+}
+
+```
 /cohorts
 
     GET - returns all cohorts in the database
@@ -117,6 +130,7 @@ Response:
 ```
 {
     "status": 200,
+
     "message": "Operation successful",
     "data": [
         {
@@ -130,5 +144,6 @@ Response:
             "url": "./images/babyPeach.png"
         }
     ]
+
 }
 ```
