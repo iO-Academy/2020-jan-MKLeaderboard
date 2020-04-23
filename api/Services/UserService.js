@@ -41,5 +41,24 @@ function hydrateUsers(db, users, callback) {
     }
 }
 
+/**  Takes an object from user form validates and sanitises user info before adding to users collection in DB
+ *
+ * @param db -  Database connection
+ * @param user - User object with [name], [favChar] and [cohort]
+ * @param callback - the callback function
+ */
+function createUser(db, user, callback) {
+    let collection = db.collection('users');
+    try {
+        collection.insertOne(user, (err, docs) => {
+            callback(docs)
+        });
+    } catch (err) {
+        console.log ('User not saved to DB')
+    }
+}
+
+
 module.exports.getAllUsers = getAllUsers;
 module.exports.hydrateUsers = hydrateUsers;
+module.exports.createUser = createUser;
