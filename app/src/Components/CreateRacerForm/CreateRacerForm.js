@@ -2,18 +2,64 @@ import React, { Component } from 'react';
 import './createRacerForm.css';
 import "../DropDownInput/DropDownInput";
 import DropDownInput from "../DropDownInput/DropDownInput";
+import validator from 'validator';
 
 export default class CreateRacerForm extends Component {
 
     state = { 
         cohortsListData: [],
         characterListData: [],
-        charImg: ''
+        charImg: '',
+        formMessage: '',
+        inputRacerName: '',
+        inputCohort: '',
+        inputFavChar: ''
     };
 
-    setCharImg = (id) => {
-        let characterChoice = this.state.characterListData.find(character => character.value === id);
-        this.setState({ charImg: characterChoice.url });
+    handleSubmit = (e) => {
+        e.preventDefault();
+        if (!this.state.inputRacerName) {
+            this.setState({ formMessage: 'Name field cannot be blank' })
+        } else {
+            if (!validator.isLength(this.state.inputRacerName, { min: 2, max: 12 })) {
+                this.setState({ formMessage: 'Name must be between 2 and 12 characters long' })
+            } else {
+                let requestData = {
+                    "name": this.state.inputRacerName,
+                    "cohort": this.state.inputCohort,
+                    "favChar": this.state.inputFavChar
+                }
+
+                fetch('http://localhost:4000/users', {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(requestData)
+                }).then(resData => resData.json)
+                    .then(responseData => {
+                        if (!responseData) {
+                            this.setState({ formMessage: 'No response received' });
+                        } else if (responseData.status !== 200) {
+                            this.setState({ formMessage: responseData.message });
+                        } else {
+                            this.props.history.push('/');
+                        }
+                    });
+            }
+        }
+    };
+
+    handleChange = (e) => {
+        let stateKey = e.target.name;
+        let stateValue = validator.blacklist(e.target.value, '( |<|>|\'|"|`|&)');
+        if (stateKey === 'inputFavChar') {
+            let characterChoice = this.state.characterListData.find(character => character.value === stateValue);
+            this.setState( { [stateKey]: stateValue, charImg: characterChoice.url } );
+        } else {
+            this.setState( { [stateKey]: stateValue});
+        }
     }
 
     componentDidMount() {
@@ -26,22 +72,27 @@ export default class CreateRacerForm extends Component {
                             let cohorts = cohortData.data;
                             let characters = charData.data;
 
-                            const cohortsList = cohorts.map((cohort => {
+                            const cohortsList = cohorts.map(cohort => {
                                 return {
                                     'value': cohort._id,
                                     'name': cohort.name
                                 }
-                            }));
+                            });
 
-                            const charsList = characters.map((character => {
+                            const charsList = characters.map(character => {
                                 return {
                                     'value': character.id,
                                     'name': character.name,
                                     'url': character.url
                                 }
-                            }));
+                            });
 
-                            this.setState({ cohortsListData: cohortsList, characterListData: charsList });
+                            this.setState({
+                                cohortsListData: cohortsList,
+                                characterListData: charsList,
+                                inputCohort: cohortsList[0].value,
+                                inputFavChar: charsList[0].value
+                            });
                     })
             })
     }
@@ -55,15 +106,16 @@ export default class CreateRacerForm extends Component {
                 </div>
 
                 <div className="formContent">
-                    <input type="text" className="racerName" />
+                    <div className="formMessage">{ this.state.formMessage }</div>
+                    <input type="text" name="inputRacerName" placeholder="Enter Racer Name" className="racerName" required minLength={2} maxLength={12} onChange={ this.handleChange } />
 
                     <label>Cohort:</label>
-                    <DropDownInput options={ this.state.cohortsListData } />
+                    <DropDownInput options={ this.state.cohortsListData } inputName={ 'inputCohort' } updateHandler={ this.handleChange } />
 
                     <label>Favourite character:</label>
-                    <DropDownInput options={ this.state.characterListData } callback={ this.setCharImg } />
+                    <DropDownInput options={ this.state.characterListData } inputName={ 'inputFavChar' } updateHandler={ this.handleChange } />
 
-                    <input type="submit" className="submitBtn" label="Submit" />
+                    <input type="submit" className="submitBtn" value="Submit" />
                 </div>
             </form>
         )

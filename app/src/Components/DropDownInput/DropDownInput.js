@@ -5,17 +5,12 @@ export default class DropDownInput extends Component {
 
     state = {
         options: [],
-        callback: null
+        updateHandler: null,
+        inputName: ''
     }
 
     componentDidMount() {
-
-        if(typeof this.props.callback === 'function') {
-            this.setState({ options: this.props.options, callback: this.props.callback });
-        } else {
-            this.setState( { options: this.props.options });
-        }
-
+            this.setState( { options: this.props.options, inputName: this.props.inputName, updateHandler: this.props.updateHandler });
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -29,15 +24,15 @@ export default class DropDownInput extends Component {
     }
 
     handleInputChange = (e) => {
-        if(this.state.callback) {
-            this.state.callback(e.target.value);
+        if(this.state.updateHandler) {
+            this.state.updateHandler(e);
         }
     }
 
     render() {
         return (
-            <select className="cohortsDropDown" onChange={ this.handleInputChange } >
-            { this.state.options ? this.state.options.map(item => <option value={item.value}>{item.name}</option>) : '' }
+            <select name={ this.state.inputName } className="dropDown" onChange={ this.handleInputChange }>
+            { this.state.options ? this.state.options.map(item => <option key={ item.value } value={ item.value }>{ item.name }</option>) : '' }
             </select>
         )
     }
