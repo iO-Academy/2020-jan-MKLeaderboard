@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import './createRacerForm.css';
 import "../DropDownInput/DropDownInput";
+import DropDownInput from "../DropDownInput/DropDownInput";
 
 export default class CreateRacerForm extends Component {
 
     state = { 
         cohortsListData: [],
         characterListData: [],
-        showCharImg: false
+        charImg: ''
     };
 
-    showChar = () => {
-        this.setState({ showCharImg: true });
-    }
-
-    hideChar = () => {
-        this.setState({ showCharImg: false });
+    const setCharImg = (id) => {
+        let characterChoice = this.characterListData.find(character => character.id === id);
+        this.setState({ charImg: characterChoice.url });
     }
 
     componentDidMount() {
@@ -34,15 +32,15 @@ export default class CreateRacerForm extends Component {
 
                 const cohortsList = cohorts.map((cohort => {
                     return {
-                        'Index': cohort._id,
-                        'Name': cohort.name
+                        'value': cohort._id,
+                        'name': cohort.name
                     }
                 }));
 
                 const charsList = characters.map((character => {
                     return {
-                        'Index': character.id,
-                        'Name': character.name,
+                        'value': character.id,
+                        'name': character.name,
                     }
                 }));
 
@@ -59,9 +57,10 @@ export default class CreateRacerForm extends Component {
                 <input type="text" className="racerName" />
                 
                 <label>Select your cohort:</label>
-
+                <DropDownInput options={this.state.cohortsListData} />
 
                 <label>Select your favourite character:</label>
+                <DropDownInput options={this.state.characterListData} callback={this.setCharImg} />
 
                 <button type="submit" className="submitBtn" label="Submit" method="post" />
 
