@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './createRacerForm.css';
-// import "../DropDownInput/DropDownInput";
+import "../DropDownInput/DropDownInput";
 
 export default class CreateRacerForm extends Component {
 
@@ -9,14 +9,31 @@ export default class CreateRacerForm extends Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:4000/cohorts')
-        .then(res => res.json())
-        .then((responseData) => {
-            let cohorts = responseData.data;
+        // fetch('http://localhost:4000/cohorts')
+        // .then(res => res.json())
+        // .then((responseData) => {
+        //     let cohorts = responseData.data;
+        //
+        //     const cohortsList = cohorts.map((cohort) => cohortDropDownContent={cohort});
+        //     //this.setState({ cohortsListData: cohortsList });
+        // })
 
-            // const cohortsList = cohorts.map((cohort) => cohortDropDownContent={cohort});
-            //this.setState({ cohortsListData: cohortsList });
-        })
+        Promise.all([
+            fetch('http://localhost:4000/cohorts'),
+            fetch('http://localhost:4000/characters')
+        ])
+            .then(function(responses) {
+                return responses.map(function(response) {
+                    return response.json();
+                })
+            })
+            .then((responseData) => {
+                let cohorts = responseData[0].data;
+                let characters = responseData[1].data;
+
+                const cohortsList = cohorts.map((cohort => cohortDropDownContent={ cohort }));
+
+            })
     }
 
     render() {
