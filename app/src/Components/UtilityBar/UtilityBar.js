@@ -20,7 +20,7 @@ class UtilityBar extends React.Component {
         return (
             <div className="utilityBar">
                 <Modal heading={'Create a Racer'} show={this.state.modalShow} handleClose={this.hideModal} modalContent={<CreateRacerForm />} />
-                <button type='button' className ="utilityButton" onClick={this.showModal}>Create a Racer</button>
+                <button type='button' className ="utilityButton" onClick={this.showModal}><span>+</span> Create a Racer</button>
             </div>
         )
     }
