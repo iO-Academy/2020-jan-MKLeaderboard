@@ -15,20 +15,25 @@
     top:20%;
     left:50%;
     transform: translate(-50%,0);
-    padding: 20px;
+    padding: 14px 20px 20px;
+    border-radius: 10px;
 }
 
 .modalContent {
-    padding: 10px;
+    padding: 20px 5px 5px;
 }
 
-.modal h2 {
+.modal .modal-main h2 {
     margin: 5px;
     display: inline-block;
+    font-size: 1.4rem;
 }
 
 .btnCloseCircle {
     float: right;
+    font-size: 1.2rem;
+    margin-top: 7px;
+    border-radius: 15px;
 }
 
 .display-block {
