@@ -39,7 +39,6 @@ export default class CreateRacerForm extends Component {
                     body: JSON.stringify(requestData)
                 }).then(resData => resData.json())
                     .then(responseData => {
-                        console.log(responseData)
                         if (!responseData) {
                             this.setState({ formMessage: 'No response received' });
                         } else if (responseData.status !== 200) {
