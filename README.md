@@ -8,7 +8,7 @@ To install the project, clone it into a directory, and then type `npm install` i
 
 To run the project, navigate to the `/api/` directory and type `nodemon start.js` in your terminal. This will start the node server. Then, in the `/app/` directory, type `npm start` in your terminal. 
 
-Once you have completed the above steps, you can navigate to `http://localhost:3000` in a web browser and start enjoying Mario Kart Leaderboard. 
+Once you have completed the above steps, you can navigate to `http://localhost:3000` in a web browser to start enjoying the Mario Kart Leaderboard. 
 
 
 ## API Routes
