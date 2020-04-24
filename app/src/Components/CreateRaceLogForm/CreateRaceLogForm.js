@@ -50,12 +50,6 @@ export default class CreateRaceLogForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        // if (!this.state.inputRacerName) {
-        //     this.setState({ formMessage: 'Name field cannot be blank' })
-        // } else {
-        //     if (!validator.isLength(this.state.inputRacerName, { min: 2, max: 12 })) {
-        //         this.setState({ formMessage: 'Name must be between 2 and 12 characters long' })
-        //     } else {
 
                 let enteredUsers = [];
 
@@ -157,6 +151,6 @@ export default class CreateRaceLogForm extends Component {
 
                 <input type="submit" className="submitBtn" value="Submit" />
             </form>
-    )
+        )
     }
 }
