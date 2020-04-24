@@ -53,7 +53,7 @@ export default class CreateRaceLogForm extends Component {
 
                 let enteredUsers = [];
 
-                for(i = 1; i < 5; i++) {
+                for(let i = 1; i < 5; i++) {
                     if (`this.state.inputResultUser${i}` && `this.state.inputResultPosition${i}` && `this.state.inputResultUser${i}` !== 'none') {
                         enteredUsers.push({
                             id: `this.state.inputResultUser${i}`,
@@ -118,7 +118,7 @@ export default class CreateRaceLogForm extends Component {
                                 'favChar': user.favChar.url
                             }
                         });
-                        j
+
                         userList.unshift({ 'value' : 'none', 'name' : 'Select...' })
 
                         var trackList = tracks.map(track => {
