@@ -5,8 +5,7 @@ import Nav from './Components/Navbar/Navbar';
 import Header from './Components/Header/Header';
 import RacersPage from './Components/RacersPage/RacersPage';
 import TracksPage from './Components/TracksPage/TracksPage';
-
-
+import ResultsPage from './Components/ResultsPage/ResultsPage';
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
               <Switch>
                   <Route exact path='/' component={ RacersPage } />
                   <Route exact path='/tracks' component={ TracksPage } />
-
+                  <Route exact path='/results' component={ ResultsPage } />
               </Switch>
                 <img className='bgImage-left' src='./images/Wario_Kart_Wii.png' alt='Mario on a Go-Kart' />
                 <img className='bgImage-right' src='./images/super-mario-kart.png' alt='Mario on a Go-Kart' />

@@ -10,9 +10,9 @@ class Navbar extends Component {
                 <ul className='nav-wrapper'>
                     <li><Link to='/' className='nav-link first'>Racers</Link></li>
                     <li><Link to='/tracks' className='nav-link'>Tracks</Link></li>
+                    <li><Link to='/results' className='nav-link'>Results</Link></li>
                 </ul>
             </nav>
-
         );
     }
 }
