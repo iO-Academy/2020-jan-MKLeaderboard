@@ -2,7 +2,14 @@
 
 Welcome to the Mayden Academy Mario Kart API, where users can register as a Racer and track their race history against their rivals!
 
-This project contains a React.js front end, Node.js back end and MongoDB database. From the project root, the front end is contained in `/app/` and the back end in `/api/`.
+This project contains a React.js front end, Node.js back end, and MongoDB database. From the project root, the front end is contained in `/app/` and the back end in `/api/`.
+
+To install the project, clone it into a directory, and then type `npm install` in your terminal in both the `/app/` and `/api/` directories. 
+
+To run the project, navigate to the `/api/` directory and type `nodemon start.js` in your terminal. This will start the node server. Then, in the `/app/` directory, type `npm start` in your terminal. 
+
+Once you have completed the above steps, you can navigate to `http://localhost:3000` in a web browser and start enjoying Mario Kart Leaderboard. 
+
 
 ## API Routes
 
