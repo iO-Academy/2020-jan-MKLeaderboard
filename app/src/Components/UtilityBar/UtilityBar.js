@@ -5,7 +5,11 @@ import './utilityBar.css';
 
 class UtilityBar extends React.Component {
     state = { 
-        modalShow: false
+        modalShow: false,
+        modalHeading: '',
+        modalContent: <CreateRacerForm />,
+
+
     }
   
     showModal = () => {
