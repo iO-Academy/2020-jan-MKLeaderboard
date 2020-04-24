@@ -43,6 +43,19 @@ function validateFavChar(data) {
     }
 }
 
+function validateTrack(data) {
+    if(data.length < 1 || parseInt(data) < 1 || parseInt(data) > 32 ) {
+        return {
+            success: false,
+            message:'Track must be between 1 & 32'
+        }
+    }
+
+    return {
+        success: true,
+        message:''
+    }
+}
 
 function validateCohort(data) {
 
@@ -82,4 +95,5 @@ function sanitizeData(data) {
 module.exports.validateUser = validateUser;
 module.exports.sanitizeData = sanitizeData;
 module.exports.validateFavChar = validateFavChar;
+module.exports.validateTrack = validateTrack;
 
