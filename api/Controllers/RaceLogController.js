@@ -6,7 +6,6 @@ const ValidationService = require('../Services/ValidationService');
  * error if value not between 1 & 32
  *
  * @param req
- *
  * @param res
  */
 function createRaceLog(req, res) {

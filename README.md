@@ -147,3 +147,18 @@ Response:
 
 }
 ```
+
+/racelogs
+
+    POST - Adds a racelog to the database
+
+Request parameters: `track`,`users [id, position]...(max 4)`
+
+Response:
+```
+{
+    "status": 200,
+    "message": "It bloody worked",
+    "data": []
+}
+```
