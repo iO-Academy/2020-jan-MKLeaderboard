@@ -13,13 +13,23 @@ h1 {
 
 body {
   background-image: linear-gradient(#2867de, #0e2a7a);
-  height: 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-.bgImage {
+.bgImage-right {
   position: fixed;
   bottom: 0;
-  right: -150px;
+  right: -100px;
+  display: block;
+  height: 400px;
+  z-index: -1;
+}
+
+.bgImage-left {
+  position: fixed;
+  bottom: 0;
+  left: -20px;
   display: block;
   height: 400px;
   z-index: -1;
@@ -32,4 +42,16 @@ body {
 
 a {
   text-decoration: none;
+}
+
+@media screen and (max-width: 1390px) {
+
+  .bgImage-right {
+    right: calc(23% - 436px);
+  }
+
+  .bgImage-left {
+    left: calc(34% - 524px);
+  }
+
 }

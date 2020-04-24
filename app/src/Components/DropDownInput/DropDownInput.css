@@ -1,0 +1,7 @@
+.dropDown {
+    font-size: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 10px;
+}

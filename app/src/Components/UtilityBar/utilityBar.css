@@ -1,0 +1,28 @@
+.utilityBar {
+    padding: 0 24px 6px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-top: 5px;
+}
+
+.utilityButton {
+    border: none;
+    padding: 0;
+    font-size: 1.5rem;
+    display: inline-block;
+    font-family: MarioWii, sans-serif;
+    color: #000000;
+    background-color: unset;
+}
+
+.utilityButton:hover {
+    color: #e70010;
+}
+
+.utilityButton:focus {
+    outline: none;
+}
+
+.utilityButton span {
+    font-size: 1.8rem;
+}
