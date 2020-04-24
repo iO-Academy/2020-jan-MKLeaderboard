@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import MainContent from "../MainContent/MainContent";
 import RacerContainer from "../RacerContainer/RacerContainer";
-import './RacersPage.css';
+import PageHeaderBar from '../PageHeaderBar/PageHeaderBar';
 
 class RacersPage extends Component {
     render() {
         return (
             <div className='racersContent'>
-                <h1>Racers</h1>
+                <PageHeaderBar pageTitle='Racers' showUtilityBar={true} />
                 <MainContent displayContent={<RacerContainer />}/>
             </div>
         );

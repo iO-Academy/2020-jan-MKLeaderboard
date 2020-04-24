@@ -20,7 +20,8 @@ function App() {
                   <Route exact path='/tracks' component={ TracksPage } />
 
               </Switch>
-                <img className='bgImage' src='./images/super-mario-kart.png' />
+                <img className='bgImage-left' src='./images/Wario_Kart_Wii.png' alt='Mario on a Go-Kart' />
+                <img className='bgImage-right' src='./images/super-mario-kart.png' alt='Mario on a Go-Kart' />
             </div>
         </div>
       </Router>
