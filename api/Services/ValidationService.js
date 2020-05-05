@@ -10,10 +10,10 @@ const DbService = require('../Services/DbService');
  */
 function validateUser(data) {
 
-    if(!checkLength(data, 2, 255)) {
+    if(!checkLength(data, 2, 20)) {
         return {
             success: false,
-            message:'Name must be at least 2 characters and no more the 255 characters'
+            message:'Name length must be between 2 and 20 characters.'
         }
     }
 
@@ -33,7 +33,7 @@ function validateFavChar(data) {
     if(data.length < 1 || parseInt(data) < 1 || parseInt(data) > 25 ) {
         return {
             success: false,
-            message:'Character must be between 1 & 25'
+            message:'Character must be an integer between 1 & 25.'
         }
     }
 
@@ -57,11 +57,22 @@ function validateTrack(data) {
     }
 }
 
-function validateCohort(data) {
+function validateCohort(data, callback) {
 
     DbService.getDbConn((db) => {
         CohortService.getAllCohorts(db, (allCohorts) => {
-
+            let result = allCohorts.find(cohort => cohort._id == data)
+            if (result) {
+                callback({
+                    success: true,
+                    message:''
+                })
+            } else {
+                callback({
+                    success: false,
+                    message:'Cohort does not exist in the database.'
+                })
+            }
         })
     })
 }
@@ -96,4 +107,5 @@ module.exports.validateUser = validateUser;
 module.exports.sanitizeData = sanitizeData;
 module.exports.validateFavChar = validateFavChar;
 module.exports.validateTrack = validateTrack;
+module.exports.validateCohort = validateCohort;
 
