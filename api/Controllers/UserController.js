@@ -94,33 +94,6 @@ function createUser(req, res) {
 
     })
 
-    // if (nameValid.success && favCharValid.success) {
-    //
-    //     DbService.getDbConn( (db) => {
-    //         UserService.createUser(db, user, (docs) => {
-    //             if(docs.insertedCount === 1) {
-    //                 serverResponse.status  = 200;
-    //                 serverResponse.message  = 'It bloody worked';
-    //                 res
-    //                     .status(serverResponse.status)
-    //                     .json(serverResponse);
-    //
-    //             } else {
-    //                 serverResponse.message  = 'User was not inserted into DB';
-    //                 res
-    //                     .status(serverResponse.status)
-    //                     .json(serverResponse);
-    //
-    //             }
-    //         });
-    //     });
-    // } else {
-    //     serverResponse.message = nameValid.message + ' ' + favCharValid.message;
-    //     res
-    //         .status(serverResponse.status)
-    //         .json(serverResponse);
-    // }
-
 }
 
 module.exports.getAllUsers = getAllUsers;
