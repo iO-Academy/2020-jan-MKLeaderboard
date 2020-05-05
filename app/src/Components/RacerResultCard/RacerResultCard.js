@@ -25,10 +25,10 @@ export default class RacerResultCard extends Component {
                 </div>
 
                 <label>Racer name:</label>
-                <DropDownInput options={ this.props.userListData } inputName={ `inputResultUser${this.props.userNo}` } updateHandler={ this.props.handleChange } />
+                <DropDownInput options={ this.props.users } inputName={ `inputResultUser${this.props.userNo}` } updateHandler={ this.props.handleChange } />
 
                 <label>Position:</label>
-                <DropDownInput options={ this.props.positionListData } inputName={ `inputResultPosition${this.props.userNo}` } updateHandler={ this.props.handleChange } />
+                <DropDownInput options={ this.props.positions } inputName={ `inputResultPosition${this.props.userNo}` } updateHandler={ this.props.handleChange } />
 
             </div>
     )

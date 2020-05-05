@@ -15,8 +15,8 @@ export default class DropDownInput extends Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if(prevProps !== this.props) {
-            if(typeof this.props.callback === 'function') {
-                this.setState({ options: this.props.options, callback: this.props.callback });
+            if(typeof this.props.updateHandler === 'function') {
+                this.setState({ options: this.props.options, callback: this.props.updateHandler });
             } else {
                 this.setState( { options: this.props.options });
             }
