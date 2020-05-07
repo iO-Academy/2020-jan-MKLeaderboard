@@ -10,6 +10,7 @@ export default class CreateRaceLogForm extends Component {
     state = {
         userListData: [],
         positionListData: [
+            { "value": "none", "name": "Select..." },
             { "value": "1", "name": "1st" },
             { "value": "2", "name": "2nd" },
             { "value": "3", "name": "3rd" },
@@ -92,6 +93,7 @@ export default class CreateRaceLogForm extends Component {
         let stateKey = e.target.name;
         let stateValue = e.target.value;
 
+        console.log('Target name: ' + stateKey + ', Target Value: ' + stateValue)
         if (stateValue !== 'none' && stateKey.includes('inputResultUser')) {
             let charImgNo = 'charImg' + stateKey.substr(15, 1);
             let selectedUser = this.state.userListData.find(user => user.value === e.target.value);
@@ -127,7 +129,7 @@ export default class CreateRaceLogForm extends Component {
                                 'name': track.name,
                             }
                         });
-                        trackList.unshift({ 'value' : 'none', 'name' : 'Select...' })
+                        trackList.unshift({ 'value' : 'none', 'name' : 'Select track...' })
 
                         this.setState({
                             userListData: userList,
@@ -144,10 +146,10 @@ export default class CreateRaceLogForm extends Component {
 
                 <DropDownInput options={ this.state.trackListData } inputName={ 'inputResultTrack' } updateHandler={ this.handleChange } />
 
-                <RacerResultCard userNo="1" users={this.state.userListData} positions={this.state.positionListData} updateHandler={this.handleChange} favChar={this.state.favChar1} />
-                <RacerResultCard userNo="2" users={this.state.userListData} positions={this.state.positionListData} updateHandler={this.handleChange} favChar={this.state.favChar2} />
-                <RacerResultCard userNo="3" users={this.state.userListData} positions={this.state.positionListData} updateHandler={this.handleChange} favChar={this.state.favChar3} />
-                <RacerResultCard userNo="4" users={this.state.userListData} positions={this.state.positionListData} updateHandler={this.handleChange} favChar={this.state.favChar4} />
+                <RacerResultCard userNo="1" users={this.state.userListData} positions={this.state.positionListData} updateHandler={this.handleChange} charImg={this.state.charImg1} />
+                <RacerResultCard userNo="2" users={this.state.userListData} positions={this.state.positionListData} updateHandler={this.handleChange} charImg={this.state.charImg2} />
+                <RacerResultCard userNo="3" users={this.state.userListData} positions={this.state.positionListData} updateHandler={this.handleChange} charImg={this.state.charImg3} />
+                <RacerResultCard userNo="4" users={this.state.userListData} positions={this.state.positionListData} updateHandler={this.handleChange} charImg={this.state.charImg4} />
 
                 <input type="submit" className="submitBtn" value="Submit" />
             </form>
